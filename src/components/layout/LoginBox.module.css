@@ -22,7 +22,7 @@
   margin: 50px 0 25px;
 }
 
-.inputContainer > input {
+.inputContainer form > input {
   font-size: 10px;
   padding: 10px 10px;
   border: 1px solid #dedede;
@@ -31,13 +31,19 @@
   width: 75%;
 }
 
-.inputContainer > button {
+.inputContainer form > button {
   width: 82%;
   color: #fff;
   border-radius: 3px;
   border: none;
   padding: 5px 10px;
   margin-bottom: 15px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .fadedBlue {
