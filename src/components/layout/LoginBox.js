@@ -6,13 +6,14 @@ const LoginBox = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     console.log("Log in successful!");
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
       window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-    }, [3000]);
+    }, [2000]);
   };
 
   return (
@@ -23,28 +24,30 @@ const LoginBox = () => {
           src={require("../../assets/img/instagram-script.png")}
           alt='screens'
         />
-        <input
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-          type='text'
-          placeholder='Phone number, username, or email'
-        />
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type='password'
-          placeholder='Password'
-        />
-        <button
-          type='submit'
-          className={`${styles.loginButton} ${
-            userName !== "" && password.length >= 6
-              ? styles.darkBlue
-              : styles.fadedBlue
-          }`}
-          onClick={handleLogin}>
-          {loading ? "Logging in..." : "Log In"}
-        </button>
+        <form>
+          <input
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            type='text'
+            placeholder='Phone number, username, or email'
+          />
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type='password'
+            placeholder='Password'
+          />
+          <button
+            type='submit'
+            className={`${styles.loginButton} ${
+              userName !== "" && password.length >= 6
+                ? styles.darkBlue
+                : styles.fadedBlue
+            }`}
+            onClick={(e) => handleLogin(e)}>
+            {loading ? "Logging in..." : "Log In"}
+          </button>
+        </form>
 
         <div className={styles.divider}>
           <div></div>
