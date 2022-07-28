@@ -1,0 +1,26 @@
+.introContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.instaLogo {
+  height: 50vh;
+}
+.metaLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.metaLogo span {
+  color: #8e8e8e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.instaLogo > img,
+.metaLogo > img {
+  width: 75px;
+}

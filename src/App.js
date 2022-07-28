@@ -1,18 +1,24 @@
+import { useState, useEffect } from "react";
 import styles from "./App.module.css";
-import Page from "./components/layout/Page";
-import PhoneScreens from "./components/layout/PhoneScreens";
-import LoginBox from "./components/layout/LoginBox";
-import Footer from "./components/layout/Footer";
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./components/pages/LoginPage";
+import IntroPage from "./components/pages/IntroPage";
 
 function App() {
+  const [component, setComponent] = useState(<IntroPage />);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setComponent(<LoginPage />);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <Page>
-      <div className={styles.loginContainer}>
-        <PhoneScreens />
-        <LoginBox />
-      </div>
-      <Footer />
-    </Page>
+    <Routes>
+      <Route path='/' element={component} />
+    </Routes>
   );
 }
 

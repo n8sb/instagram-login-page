@@ -4,8 +4,16 @@ import React, { useState } from "react";
 const LoginBox = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {};
+  const handleLogin = () => {
+    console.log("Log in successful!");
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }, [3000]);
+  };
 
   return (
     <div className={styles.loginContainer}>
@@ -35,7 +43,7 @@ const LoginBox = () => {
               : styles.fadedBlue
           }`}
           onClick={handleLogin}>
-          Log In
+          {loading ? "Logging in..." : "Log In"}
         </button>
 
         <div className={styles.divider}>
