@@ -1,0 +1,34 @@
+.phoneContainer {
+  background: url("../../assets/img/phone-template.png") no-repeat;
+  height: 600px;
+  width: 420px;
+  margin-right: 32px;
+}
+
+.phoneScreens {
+  margin-top: 25px;
+  margin-left: 155px;
+}
+
+.hidden {
+  display: none;
+}
+
+.fadeIn {
+  animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .phoneContainer {
+    display: none;
+  }
+}
