@@ -4,6 +4,4 @@ const Page = ({ children }) => {
   return <div className={styles.page}>{children}</div>;
 };
 
-Page.propTypes = {};
-
 export default Page;
